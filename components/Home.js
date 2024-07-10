@@ -44,15 +44,15 @@ function Home() {
   useEffect(() => {
     console.log('Mount');
     fetch('https://mymoviz-backend-pearl-phi.vercel.app/movies').then(response => response.json()).then(data => {
-      for(let i = 0 ; i < data.movieInfos.results.length ; i++){
+      for(let i = 0 ; i < data.movies.length ; i++){
 
-        console.log(data.movieInfos.results[i].overview.length)
+        console.log(data.movies[i].overview.length)
         
-          const title = data.movieInfos.results[i].title;
-          const poster = data.movieInfos.results[i].poster_path;
-          const voteAverage = data.movieInfos.results[i].vote_average;
-          const voteCount = data.movieInfos.results[i].vote_count;
-          const overview = `${data.movieInfos.results[i].overview.substring(0, 249)} ...`;
+          const title = data.movies[i].title;
+          const poster = data.movies[i].poster_path;
+          const voteAverage = data.movies[i].vote_average;
+          const voteCount = data.movies[i].vote_count;
+          const overview = `${data.movies[i].overview.substring(0, 249)} ...`;
 
           const card = {
             title: title,
