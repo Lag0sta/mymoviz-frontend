@@ -43,7 +43,7 @@ function Home() {
   const cards = []
   useEffect(() => {
     console.log('Mount');
-    fetch('http://localhost:3000/movies').then(response => response.json()).then(data => {
+    fetch('https://mymoviz-backend-pearl-phi.vercel.app/movies').then(response => response.json()).then(data => {
       for(let i = 0 ; i < data.movieInfos.results.length ; i++){
 
         console.log(data.movieInfos.results[i].overview.length)
